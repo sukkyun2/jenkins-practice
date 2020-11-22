@@ -30,7 +30,8 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors
                         .basePackage("com.practice.student"))
-                .paths(PathSelectors.ant("/student/**"))
+//                .paths(PathSelectors.ant("/student/**"))
+                .paths(PathSelectors.ant("/**"))
                 .build();
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.practice.student.mapper.ExamMapper">
+
+    <sql id="exam" >
+         exam_id as examId
+        ,stu_id as stuId
+        ,exam_nm as examName
+        ,exam_score as examScore
+        ,exam_type as examType
+    </sql>
+
+    <select id="selectExam" parameterType="long" resultType="com.practice.student.model.Exam">
+        SELECT
+            <include refid="exam"/>
+        FROM
+            exam
+        WHERE
+            stu_id = #{stuId}
+    </select>
+
+    <insert id="insertExam">
+        INSERT INTO exam
+        (stu_id, exam_nm, exam_score, exam_type)
+        VALUES
+        (#{stuId}, #{examName}, #{examScore}, #{examType})
+    </insert>
+
+    <update id="updateExam">
+        UPDATE
+            exam
+        SET
+             exam_nm = #{examName}
+            ,exam_score = #{examScore}
+            ,exam_type = #{examType}
+        WHERE
+             exam_id = #{examId}
+    </update>
+    <delete id="deleteExam" parameterType="long">
+        DELETE FROM
+            exam
+        WHERE
+            exam_id = #{examId}
+    </delete>
+</mapper>

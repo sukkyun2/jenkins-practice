@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("api/student")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StudentController {
 
@@ -46,4 +46,8 @@ public class StudentController {
     public void deleteStudent(@PathVariable("stuId") Long stuId){
         studentService.deleteStudent(stuId);
     }
+//    @RequestMapping()
+//    public  searchStudent(){
+//
+//    }
 }

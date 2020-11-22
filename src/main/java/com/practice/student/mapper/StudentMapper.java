@@ -11,5 +11,5 @@ public interface StudentMapper {
     public void insertStudent(Student student);
     public void updateStudent(Student student);
     public void deleteStudent(Long stuId);
-    public Student selectStudentOne(Long stuId); //ansisql multiporpertyes
+    public Student selectStudentOne(Long stuId);
 }
